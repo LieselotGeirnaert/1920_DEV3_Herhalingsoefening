@@ -1,0 +1,13 @@
+.emptystate {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.emptystate__content {
+  color: var(--greyColor);
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  margin-top: 1.5rem;
+}

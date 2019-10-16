@@ -1,0 +1,7 @@
+.visually-hidden {
+  display: none;
+}
+
+.spaced {
+  padding: var(--margin);
+}

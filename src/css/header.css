@@ -3,7 +3,6 @@
   background-image: url(../assets/img/plan-based-coffee.png);
   background-position: 90% 50%;
   background-repeat: no-repeat;
-  padding: var(--margin);
   width: 100%;
 }
 
@@ -11,8 +10,9 @@
   font-size: 2.6rem;
   line-height: 2.8rem;
   margin-bottom: 1rem;
+  padding-top: .6rem;
   width: 60%;
-  
+
   &::after {
     content: '\1F331';
   }

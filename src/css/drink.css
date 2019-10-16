@@ -1,5 +1,5 @@
 .price {
-  margin: 1rem 0rem;
+  margin: 1rem 0;
   width: calc(50% - 1rem);
 }
 
@@ -21,7 +21,7 @@
 }
 
 .price__button__amount {
-  color: #9c9c9c;
+  color: var(--greyColor);
   font-size: 1.2rem;
   line-height: 1.4rem;
 }
