@@ -1,0 +1,37 @@
+.price {
+  margin: 1rem 0rem;
+  width: calc(50% - 1rem);
+}
+
+.price__button {
+  background-color: var(--backgroundColor);
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+}
+
+.price__button__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.price__button__name {
+  line-height: 2.1rem;
+}
+
+.price__button__amount {
+  color: #9c9c9c;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+.price__button__plus {
+  align-items: center;
+  background-color: var(--greenColor);
+  border-radius: 4px;
+  display: flex;
+  height: 3.8rem;
+  justify-content: center;
+  width: 3.8rem;
+}

@@ -1,0 +1,10 @@
+.prices {
+  background-color: var(--pinkColor);
+  padding: 0 var(--margin) var(--margin) var(--margin);
+}
+
+.prices__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
