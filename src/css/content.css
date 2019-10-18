@@ -7,7 +7,32 @@
 
 .emptystate__content {
   color: var(--greyColor);
-  font-size: 1.8rem;
   line-height: 2.1rem;
   margin-top: 1.5rem;
+}
+
+.content {
+  padding: var(--margin) 0;
+}
+
+.title_mini {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  padding-left: var(--margin);
+  text-transform: uppercase;
+}
+
+.orders__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.total {
+  background-color: var(--lightGreyColor);
+  display: flex;
+  font-weight: 500;
+  justify-content: space-between;
+  line-height: 2.1rem;
+  padding: 1.6rem var(--margin);
+  position: relative;
 }

@@ -1,0 +1,13 @@
+.navigation {
+  background-color: var(--blackColor);
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.navigation__items {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.7rem 8.3rem;
+}

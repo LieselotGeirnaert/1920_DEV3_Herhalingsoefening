@@ -1,0 +1,19 @@
+.order {
+  align-items: center;
+  display: grid;
+  border-bottom: 1px solid #efefef;
+  grid-template-columns: 10fr 3fr 1fr;
+  padding: 1.5rem var(--margin);
+  width: 100%;
+}
+
+.order__amount {
+  color: var(--pinkColor);
+  font-weight: bold;
+  line-height: 2.1rem;
+}
+
+.remove {
+  color: var(--greyColor);
+  font-size: 1.8rem;
+}
