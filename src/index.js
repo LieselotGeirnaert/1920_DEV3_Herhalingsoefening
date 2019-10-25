@@ -13,11 +13,13 @@ import data from './assets/data/coffees.json';
         const $li = document.createElement('li');
         $li.setAttribute('class', 'price');
         $li.dataset.id = coffee.id;
+
+        // const price = ;
         $li.innerHTML =
           `<a class="price__button">
             <span class="price__button__wrapper">
             <span class="price__button__name">${coffee.name}</span>
-            <span class="price__button__amount">&euro; ${coffee.prices.medium}</span>
+            <span class="price__button__amount">&euro; ${coffee.prices.medium.toLocaleString('nl-BE', {minimumFractionDigits: 2})}</span>
             </span>
             <span class="price__button__plus" data-id="${coffee.id}">+</span>
           </a>`;
@@ -78,7 +80,7 @@ import data from './assets/data/coffees.json';
             `<span class="order__name">
               <span class="order__amount">${orders[coffee.id]} x</span> ${coffee.name}
             </span>
-            <span class="order__price">&euro; ${coffee.prices.medium * orders[coffee.id]}</span>
+            <span class="order__price">&euro; ${(coffee.prices.medium * orders[coffee.id]).toLocaleString('nl-BE', {minimumFractionDigits: 2})}</span>
             <button class="remove" data-id="${coffee.id}">
               x
             </button>`;
@@ -91,7 +93,7 @@ import data from './assets/data/coffees.json';
       for (let i = 0;i < $removeButtons.length;i ++) {
         $removeButtons[i].addEventListener('click', removeDrinkFromOrder);
       }
-      $totalPrice.innerHTML = totalPrice;
+      $totalPrice.innerHTML = totalPrice.toLocaleString('nl-BE', {minimumFractionDigits: 2});
     } else {
       $orders.classList.add('hide');
       $emptystate.classList.remove('hide');
