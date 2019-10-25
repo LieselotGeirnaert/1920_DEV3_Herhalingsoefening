@@ -16,6 +16,11 @@
 .remove {
   color: var(--greyColor);
   font-size: 1.8rem;
+
+  &:hover {
+    color: var(--blackColor);
+    cursor: pointer;
+  }
 }
 
 @media screen and (min-width: 700px) {
