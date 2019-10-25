@@ -3,6 +3,7 @@ import data from './assets/data/coffees.json';
 
 {
   const orders = [];
+  let amountOfOrders = 0;
 
   const showAllCoffees = data => {
     const $priceList = document.querySelector('.prices__list');
@@ -34,6 +35,8 @@ import data from './assets/data/coffees.json';
     } else {
       orders[drinkId] = orders[drinkId] + 1;
     }
+
+    amountOfOrders += 1;
     updateOrders(orders, data);
   };
 
@@ -47,10 +50,14 @@ import data from './assets/data/coffees.json';
       orders[drinkId] = orders[drinkId] - 1;
     }
 
+    amountOfOrders -= 1;
     updateOrders(orders, data);
   };
 
   const updateOrders = (orders, data) => {
+    const $orders = document.querySelector('.orders__wrapper');
+    const $emptystate = document.querySelector('.emptystate');
+
     const $orderList = document.querySelector('.orders');
     const $totalPrice = document.querySelector('.total__price span');
     let totalPrice = 0;
@@ -58,29 +65,37 @@ import data from './assets/data/coffees.json';
     while ($orderList.hasChildNodes()) {
       $orderList.removeChild($orderList.firstChild);
     }
-    data.coffees.forEach(coffee => {
-      if (orders[coffee.id] != null) {
-        const $li = document.createElement('li');
-        $li.setAttribute('class', 'order');
-        $li.innerHTML =
-          `<span class="order__name">
-            <span class="order__amount">${orders[coffee.id]} x</span> ${coffee.name}
-          </span>
-          <span class="order__price">&euro; ${coffee.prices.medium * orders[coffee.id]}</span>
-          <button class="remove" data-id="${coffee.id}">
-            x
-          </button>`;
-        $orderList.appendChild($li);
-        totalPrice += coffee.prices.medium * orders[coffee.id];
+
+    if (amountOfOrders > 0) {
+      $orders.classList.remove('hide');
+      $emptystate.classList.add('hide');
+
+      data.coffees.forEach(coffee => {
+        if (orders[coffee.id] != null) {
+          const $li = document.createElement('li');
+          $li.setAttribute('class', 'order');
+          $li.innerHTML =
+            `<span class="order__name">
+              <span class="order__amount">${orders[coffee.id]} x</span> ${coffee.name}
+            </span>
+            <span class="order__price">&euro; ${coffee.prices.medium * orders[coffee.id]}</span>
+            <button class="remove" data-id="${coffee.id}">
+              x
+            </button>`;
+          $orderList.appendChild($li);
+          totalPrice += coffee.prices.medium * orders[coffee.id];
+        }
+      });
+
+      const $removeButtons = document.getElementsByClassName('remove');
+      for (let i = 0;i < $removeButtons.length;i ++) {
+        $removeButtons[i].addEventListener('click', removeDrinkFromOrder);
       }
-    });
-
-    const $removeButtons = document.getElementsByClassName('remove');
-    for (let i = 0;i < $removeButtons.length;i ++) {
-      $removeButtons[i].addEventListener('click', removeDrinkFromOrder);
+      $totalPrice.innerHTML = totalPrice;
+    } else {
+      $orders.classList.add('hide');
+      $emptystate.classList.remove('hide');
     }
-
-    $totalPrice.innerHTML = totalPrice;
   };
 
   const init = () => {

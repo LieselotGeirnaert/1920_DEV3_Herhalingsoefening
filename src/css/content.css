@@ -36,3 +36,7 @@
   padding: 1.6rem var(--margin);
   position: relative;
 }
+
+.hide {
+  display: none;
+}
