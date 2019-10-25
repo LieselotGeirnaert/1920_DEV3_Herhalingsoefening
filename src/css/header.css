@@ -23,3 +23,14 @@
   line-height: 1.4rem;
   text-transform: uppercase;
 }
+
+@media screen and (min-width: 700px) {
+
+  .header {
+    background-image: none;
+  }
+
+  .h1-like {
+    width: 100%;
+  }
+}

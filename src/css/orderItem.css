@@ -17,3 +17,10 @@
   color: var(--greyColor);
   font-size: 1.8rem;
 }
+
+@media screen and (min-width: 700px) {
+
+  .order {
+    grid-template-columns: 20fr 2fr 1fr;
+  }
+}

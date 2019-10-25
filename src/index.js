@@ -12,7 +12,7 @@ import data from './assets/data/coffees.json';
       if (coffee.plantbased === true) {
         const $li = document.createElement('li');
         $li.setAttribute('class', 'price');
-        $li.setAttribute('data-id', coffee.id);
+        $li.dataset.id = coffee.id;
         $li.innerHTML =
           `<a class="price__button">
             <span class="price__button__wrapper">

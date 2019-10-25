@@ -27,16 +27,34 @@
   flex-direction: column;
 }
 
+.orders {
+  padding-bottom: 15rem;
+}
+
 .total {
   background-color: var(--lightGreyColor);
+  border-top: 1px solid #efefef;
+  bottom: 8rem;
   display: flex;
   font-weight: 500;
   justify-content: space-between;
   line-height: 2.1rem;
   padding: 1.6rem var(--margin);
-  position: relative;
+  position: fixed;
+  width: 100%;
 }
 
 .hide {
   display: none;
+}
+
+@media screen and (min-width: 700px) {
+
+  .total {
+    width: 72%;
+  }
+
+  .emptystate {
+    margin: 20vw;
+  }
 }
